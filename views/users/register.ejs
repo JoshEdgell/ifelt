@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>User Registration Page</title>
+  </head>
+  <body>
+
+    <h1>New User Registration Page</h1>
+
+    <% if (passwordFail === true) { %>
+      <p>Passwords do not match.  Please try again.</p>
+    <% } %>
+
+    <form action="/users/register" method="POST">
+      First Name: <input type="text" name="firstName" value="<%=firstInput%>"><br/>
+      Last Name: <input type="text" name="lastName" value="<%=lastInput%>"><br/>
+      Username: <input type="text" name="username" value="<%=usernameInput%>"><br/>
+      Password: <input type="password" name="password"><br/>
+      Verify Password: <input type="password" name="password2"><br/>
+      <input type="submit" value="Create User">
+    </form>
+  </body>
+</html>

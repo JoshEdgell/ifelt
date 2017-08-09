@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>Show Individual Post</title>
+  </head>
+  <body>
+
+    <h1><%=post.title%></h1>
+    <small>By: <%=post.authorFirstName%> <%=post.authorLastName%></small><br/>
+    <p><%=post.postBody%></p>
+
+    <a href="/posts">Back to Posts</a>
+
+  </body>
+</html>

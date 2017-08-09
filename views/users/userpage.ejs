@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>User Landing Page</title>
+  </head>
+  <body>
+
+    <h1><%=user.firstName%> <%=user.lastName%>'s Page</h1>
+
+    <h2>Posts by <%=user.firstName%></h2>
+    <ul>
+      <% for (let i = 0; i < user.posts.length; i++) { %>
+        <li><a href="/posts/<%=user.posts[i]._id%>"><%=user.posts[i].title%></a> <small>(<%=user.posts[i].feeling%>)</small>
+        <form action="/posts/<%=posts[i]._id%>/edit" method="GET">
+          <input type="submit" value="Edit Post"/>
+        </form>
+
+        <form action="/posts/<%=posts[i]._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete Post"/>
+        </form>
+
+        </li>
+      <% } %>
+    </ul>
+    <form action="/posts/new/<%=user.id%>" method="GET">
+      <input type="submit" value="Write Post">
+    </form>
+
+
+  </body>
+</html>

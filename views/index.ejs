@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    <% include ../partials/nav.ejs %>
+    <meta charset="utf-8">
+    <title>iFelt Main Page</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>Welcome to iFelt</h1>
+      <p>How do you feel today?</p>
+    </div>
+
+    <div class="homeContainer">
+      <div class="six columns">
+        <h2>Feelings</h2>
+        <p>Feeling excited? Happy? A little sad? You're not alone - see what's made other users feel the same way, and maybe see what those feelings led them to do.</p>
+        <a href="/feelings">View All Feelings</a>
+      </div>
+
+      <div class="six columns">
+        <h2>Posts</h2>
+        <p>Not sure how you're feeling today? Maybe you just want to see what others are thinking. That's okay, too. Browse through all of iFelt's posts</p>
+        <a href="/posts">All Posts</a>
+      </div>
+
+      <div class="six columns">
+        <h2>Browse By User</h2>
+        <p>Have you found a user whose posts resonate with you? Maybe you just want to see what someone different has to say. Take a look through some posts created by other iFelt users.</p>
+        <a href="/users">Browse by User</a><br/>
+      </div>
+    </div>
+    <% include ../partials/footer.ejs %>
+  </body>
+</html>

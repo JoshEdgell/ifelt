@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>Edit Post</title>
+  </head>
+  <body>
+
+    <h1>Edit Post</h1>
+    <h3>Post</h3>
+    <form action='/posts/edit/<%=post._id%>?_method=PUT' method="POST">
+      Title: <input type="text" name="title" value="<%=post.title%>">
+      Body: <textarea name="postBody"><%=post.postBody%></textarea>
+      <input type="submit" value="Edit Post">
+    </form>
+<br/><br/>
+
+
+
+  </body>
+</html>

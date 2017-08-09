@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Feelings</title>
+  </head>
+  <body>
+    <a href="/admin">Back to Admin</a>
+    <br/><br/>
+    <ul>
+      <% for (let i = 0; i < feelings.length; i++) { %>
+        <li><%=feelings[i].feeling%></li>
+        <form action="/admin/feeling/<%=feelings[i]._id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete Feeling"/>
+        </form>
+      <% } %>
+    </ul>
+  </body>
+</html>

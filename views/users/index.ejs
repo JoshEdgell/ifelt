@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>All Users</title>
+  </head>
+  <body>
+    <h1>All Users</h1>
+
+    <ul>
+        <% for (let i = 0; i < users.length ; i++) { %>
+          <li><a href="/users/<%=users[i]._id%>"><%=users[i].firstName%></a></li>
+        <% } %>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>New Feeling</title>
+  </head>
+  <body>
+
+    <h1>Create a New Feeling</h1>
+      <form action="/feelings" method="post">
+        <input type="text" name="feeling"/>
+        <input type="submit" value="Create Feeling">
+      </form>
+  </body>
+</html>

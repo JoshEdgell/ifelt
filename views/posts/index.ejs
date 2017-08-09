@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>View Posts</title>
+  </head>
+  <body>
+
+    <h1>Posts Landing Page</h1>
+
+    <h2>All Posts</h2>
+    <p>To keep your feed fresh, our posts are listed newest-first.</p>
+      <ul>
+        <% for (let i = posts.length; i >= 0; i--) { %>
+          <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a> by: <%=posts[i].authorFirstName%> <%=posts[i].authorLastName%>   <small>(<%=posts[i].feeling%>)</small></li>
+        <% } %>
+      </ul>
+
+
+  </body>
+</html>

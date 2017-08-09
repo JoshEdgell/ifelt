@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title><%=feeling%> Page</title>
+  </head>
+  <body>
+
+    <h1>Time to feel <%=feeling%></h1>
+    <ul>
+      <% for (let i = 0; i < posts.length; i++) { %>
+        <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a></li>
+      <% } %>
+    </ul>
+
+
+  </body>
+</html>

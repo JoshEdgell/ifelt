@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>All The Feels</title>
+  </head>
+  <body>
+
+    <h1>Current Feelings</h1>
+    <ul>
+      <% for (let i = 0; i < feelings.length; i++) { %>
+        <li><a href="/feelings/<%=feelings[i].feeling%>"><%=feelings[i].feeling%></a></li>
+      <% } %>
+    </ul>
+  </body>
+</html>

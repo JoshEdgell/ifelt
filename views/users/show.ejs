@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../../partials/nav.ejs %>
+    <% include ../../partials/head.ejs %>
+    <meta charset="utf-8">
+    <title>Show Single User</title>
+  </head>
+  <body>
+
+    <h1><%=user.firstName%> <%=user.lastName%>'s Page</h1>
+
+    <h2>Posts by <%=user.firstName%></h2>
+    <ul>
+      <% for (let i = 0; i < user.posts.length; i++) { %>
+        <li><a href="/posts/<%=user.posts[i]._id%>"><%=user.posts[i].title%></a> <small>(<%=user.posts[i].feeling%>)</small></li>
+      <% } %>
+    </ul>
+
+    <a href="/users">Back</a>
+  </body>
+</html>
