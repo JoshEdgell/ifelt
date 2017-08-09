@@ -45,6 +45,7 @@
   flex-direction: row;
   margin-left: 5%;
   margin-right: 5%;
+  text-align: justify
 }
 .homeContainer h2 {
   text-align: center;
@@ -54,11 +55,75 @@
   text-align: center;
   margin-top: -20px;
 }
+/*----------Use across multiple pages----------*/
+.centerText {
+  text-align: center;
+}
+.pageHeader {
+  margin-top: 16px;
+}
+.secondHeader {
+  margin-top: -16px;
+}
+.quote {
+  margin: 0 auto;
+  width: 450px;
+  margin-top: -8px;
+}
+.quoter {
+  font-style: italic;
+}
+.horizontalList li {
+  display: inline;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+/*---------------------------------------------*/
 
+/*-----------------Post Classes----------------*/
+.editPostForm {
+  width: 70%;
+  margin-left: 15%;
+}
+.editPostTitle {
+  float: left;
+}
+.editPostButton {
+  float: right;
+}
+.editPostBody {
+  width: 100%
+}
+.newPostForm {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+.newPostText {
+  width: 100%;
+}
+.newPostTitle {
+  float: left;
+}
+.newPostFeeling {
+  float: right;
+}
+.byLine {
+  margin-top: -24px;
+  margin-bottom: 16px;
+}
+.showPostText {
+  width: 80%;
+  text-align: justify;
+}
+/*---------------------------------------------*/
 a {
   text-decoration: none;
 }
-
 ul {
   list-style: none;
+}
+textarea {
+  height: 200px;
+  display: inline-block;
 }

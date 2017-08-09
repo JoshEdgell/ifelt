@@ -7,14 +7,17 @@
     <title><%=feeling%> Page</title>
   </head>
   <body>
+    <div class="centerText">
+      <h3 class="pageHeader">Feeling <%=feeling%>?</h3>
+      <p class="quote">Don't keep all your feelings sheltered - express them.  Don't ever let life shut you up."</p>
+      <p class="quoter">Dr. Steve Maraboli</p>
 
-    <h1>Time to feel <%=feeling%></h1>
-    <ul>
-      <% for (let i = 0; i < posts.length; i++) { %>
-        <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a></li>
-      <% } %>
-    </ul>
-
-
+      <ul>
+        <% for (let i = 0; i < posts.length; i++) { %>
+          <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a></li>
+        <% } %>
+      </ul>
+    </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

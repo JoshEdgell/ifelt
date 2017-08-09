@@ -7,11 +7,15 @@
     <title>New Feeling</title>
   </head>
   <body>
-
-    <h1>Create a New Feeling</h1>
-      <form action="/feelings" method="post">
-        <input type="text" name="feeling"/>
-        <input type="submit" value="Create Feeling">
-      </form>
+    <div class="centerText">
+      <h3 class="pageHeader">Create a New Feeling</h3>
+      <p class="quote">"First feelings are always the most natural."</p>
+      <p class="quoter">Louis XIV</p>
+        <form action="/feelings" method="post">
+          <input type="text" name="feeling"/>
+          <input type="submit" value="Create Feeling">
+        </form>
+    </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

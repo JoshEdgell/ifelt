@@ -7,17 +7,26 @@
     <title>Edit Post</title>
   </head>
   <body>
+    <div class="centerText">
+      <h3 class="pageHeader">Edit Post</h3>
+      <h5 class="secondHeader"><%=post.title%></h5>
 
-    <h1>Edit Post</h1>
-    <h3>Post</h3>
-    <form action='/posts/edit/<%=post._id%>?_method=PUT' method="POST">
-      Title: <input type="text" name="title" value="<%=post.title%>">
-      Body: <textarea name="postBody"><%=post.postBody%></textarea>
-      <input type="submit" value="Edit Post">
-    </form>
-<br/><br/>
+      <div class="editPostForm">
+      <form action='/posts/edit/<%=post._id%>?_method=PUT' method="POST">
+
+        <div class="editPostTitle">
+          <input type="text" name="title" value="<%=post.title%>">
+        </div>
+        <div class="editPostButton">
+          <input type="submit" value="Edit Post">
+        </div>
+
+        <textarea name="postBody" class="editPostBody"><%=post.postBody%></textarea>
+
+      </form>
 
 
-
+    </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

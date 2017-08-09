@@ -7,12 +7,19 @@
     <title>Show Individual Post</title>
   </head>
   <body>
-
-    <h1><%=post.title%></h1>
-    <small>By: <%=post.authorFirstName%> <%=post.authorLastName%></small><br/>
-    <p><%=post.postBody%></p>
-
-    <a href="/posts">Back to Posts</a>
-
+    <div class="centerText">
+      <h3 class="pageHeader"><%=post.title%></h1>
+        <div class="byLine">
+          <small>By: <%=post.authorFirstName%> <%=post.authorLastName%></small>
+        </div>
+      <p><%=post.postBody%></p>
+      <div class="horizontalList">
+        <ul>
+          <li><a href="/posts">All Posts</a></li>
+          <li><a href="/feelings">All Feelings</a></li>
+        </ul>
+      </div>
+    </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

@@ -4,15 +4,19 @@
     <% include ../../partials/nav.ejs %>
     <% include ../../partials/head.ejs %>
     <meta charset="utf-8">
-    <title>All The Feels</title>
+    <title>Explore Emotions</title>
   </head>
   <body>
-
-    <h1>Current Feelings</h1>
-    <ul>
-      <% for (let i = 0; i < feelings.length; i++) { %>
-        <li><a href="/feelings/<%=feelings[i].feeling%>"><%=feelings[i].feeling%></a></li>
-      <% } %>
-    </ul>
+    <div class="centerText">
+      <h3 class="pageHeader">iFelt's Range of Emotions</h3>
+      <p class="quote">"Feelings are much like waves. We can't stop them from coming but we can choose which one to surf."</p>
+      <p class="quoter">-Jonathan Martensson</p>
+      <ul>
+        <% for (let i = 0; i < feelings.length; i++) { %>
+          <li><a href="/feelings/<%=feelings[i].feeling%>"><%=feelings[i].feeling%></a></li>
+        <% } %>
+      </ul>
+    </div>
+  <% include ../../partials/footer.ejs %>
   </body>
 </html>

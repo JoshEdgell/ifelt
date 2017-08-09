@@ -7,17 +7,18 @@
     <title>View Posts</title>
   </head>
   <body>
+    <div class="centerText">
 
-    <h1>Posts Landing Page</h1>
+      <h3 class="pageHeader">iFelt's Posts</h3>
+      <p class="quote">"Feelings that come back are feelings that never went away."</p>
+      <br/>
 
-    <h2>All Posts</h2>
-    <p>To keep your feed fresh, our posts are listed newest-first.</p>
-      <ul>
-        <% for (let i = posts.length; i >= 0; i--) { %>
-          <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a> by: <%=posts[i].authorFirstName%> <%=posts[i].authorLastName%>   <small>(<%=posts[i].feeling%>)</small></li>
-        <% } %>
-      </ul>
-
-
+        <ul>
+          <% for (let i = posts.length - 1; i >= 0; i--) { %>
+            <li><a href="/posts/<%=posts[i]._id%>"><%=posts[i].title%></a> by: <%=posts[i].authorFirstName%> <%=posts[i].authorLastName%>   <small>(<%=posts[i].feeling%>)</small></li>
+          <% } %>
+        </ul>
+    </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

@@ -7,24 +7,37 @@
     <title>New Post</title>
   </head>
   <body>
+    <div class="centerText">
+      <h3 class="pageHeader">Write About Your Feeling</h1>
+        <p class="quote">"The more room you give yourself to express your true thoughts and feelings, the more room there is for your wisdom to emerge."</p>
+        <p class="quoter">Marianne Williamson</p>
+    </div>
 
-    <h1>New Post Page</h1>
+    <div class="newPostForm"
 
-    <form action="/posts/<%=user._id%>/<%=user.firstName%>/<%=user.lastName%>/<%=user.username%>" method="POST">
-      Post Title: <input type="text" name="title"><br/>
-      Feeling:
-      <select name="feeling">
-        <% for (let i = 0; i < feelings.length; i++) { %>
-          <option value="<%=feelings[i].feeling%>"><%=feelings[i].feeling%></option>
-        <% } %></select> <a href="/feelings/new">Can't find how you're feeling?  Create a new feeling.</a>
+      <form action="/posts/<%=user._id%>/<%=user.firstName%>/<%=user.lastName%>/<%=user.username%>" method="POST">
 
-        <br/>
-        Post body: <br/>
-        <textarea name="postBody"></textarea><br/>
+        <div class="newPostTitle">
+          Title: <input type="text" name="title"><br/>
+        </div>
 
-        <input type="submit" value="Create Post"></input>
-    </form>
+        <div class="newPostFeeling">
+          Feeling:
+          <select name="feeling">
+            <% for (let i = 0; i < feelings.length; i++) { %>
+              <option value="<%=feelings[i].feeling%>"><%=feelings[i].feeling%></option>
+            <% } %></select> <a href="/feelings/new">Can't find how you're feeling?  Create a new feeling.</a>
+          </div>
 
-    <a href="/posts">Back to Posts</a>
+          <textarea name="postBody" class="newPostText" placeholder='Express yourself. Start with "I felt"...'></textarea><br/>
+
+          <input type="submit" value="Create Post"></input>
+        </form>
+
+      </div>
+      <div class="centerText">
+        <a href="/home/<%=user._id%>">Return Home</a>
+      </div>
+    <% include ../../partials/footer.ejs %>
   </body>
 </html>

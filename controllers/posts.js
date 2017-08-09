@@ -6,7 +6,7 @@ const User        = require('../models/users.js');
 
 router.get('/',(req,res)=>{
   Post.find({}, (err,foundPosts)=>{
-    res.render('posts/index.ejs', {
+    res.render('posts/index.ejs',{
       posts: foundPosts
     })
   })
