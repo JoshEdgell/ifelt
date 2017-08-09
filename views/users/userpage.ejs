@@ -4,30 +4,40 @@
     <% include ../../partials/nav.ejs %>
     <% include ../../partials/head.ejs %>
     <meta charset="utf-8">
-    <title>User Landing Page</title>
+    <title>Hello, <%=user.firstName%></title>
   </head>
   <body>
+    <div class="centerText">
+      <h3 class="pageHeader">Hello, <%=user.firstName%></h3>
+      <h5 class="secondHeader">How do you feel today?</h5>
 
-    <h1><%=user.firstName%> <%=user.lastName%>'s Page</h1>
+      <div class="userPostButton">
+        <form action="/posts/new/<%=user.id%>" method="GET">
+          <input type="submit" value="Write New Post">
+        </form>
+      </div>
 
-    <h2>Posts by <%=user.firstName%></h2>
-    <ul>
+      <h3 class="secondHeader">Your Posts</h3>
+    </div>
       <% for (let i = 0; i < user.posts.length; i++) { %>
-        <li><a href="/posts/<%=user.posts[i]._id%>"><%=user.posts[i].title%></a> <small>(<%=user.posts[i].feeling%>)</small>
-        <form action="/posts/<%=posts[i]._id%>/edit" method="GET">
-          <input type="submit" value="Edit Post"/>
-        </form>
+        <div class="userPost">
+          <div class="userPostText">
+            <a href="/posts/<%=user.posts[i]._id%>"><%=user.posts[i].title%></a> <small>(<%=user.posts[i].feeling%>)</small>
+          </div>
 
-        <form action="/posts/<%=posts[i]._id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete Post"/>
-        </form>
+          <div class="userButtons">
+            <form action="/posts/<%=posts[i]._id%>/edit" method="GET">
+              <input type="submit" value="Edit Post" class="userEditButton"/>
+            </form>
 
-        </li>
+            <form action="/posts/<%=posts[i]._id%>?_method=DELETE" method="POST">
+              <input type="submit" value="Delete Post" class="userDeleteButton"/>
+            </form>
+          </div>
+        </div>
+
+
       <% } %>
-    </ul>
-    <form action="/posts/new/<%=user.id%>" method="GET">
-      <input type="submit" value="Write Post">
-    </form>
 
     <% include ../../partials/footer.ejs %>
   </body>

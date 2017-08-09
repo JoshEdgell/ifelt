@@ -137,6 +137,21 @@ html {
 .createUserButton {
   margin-right: calc(50% - 45px);
 }
+.userPost {
+  width: 300px;
+  margin: 0 auto;
+  max-height: 75px;
+}
+.userPostText {
+  text-align: center;
+}
+.userDeleteButton {
+  float: right;
+  margin-top: -78px;
+}
+.userPostButton {
+  margin: 0 auto;
+}
 /*---------------------------------------------*/
 a {
   text-decoration: none;
