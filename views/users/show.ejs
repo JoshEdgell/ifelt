@@ -4,13 +4,12 @@
     <% include ../../partials/nav.ejs %>
     <% include ../../partials/head.ejs %>
     <meta charset="utf-8">
-    <title>Show Single User</title>
+    <title><%=user.firstName%> <%=user.lastName%>'s Page</title>
   </head>
   <body>
     <div class="centerText">
-      <h3 class="pageHeader"><%=user.firstName%> <%=user.lastName%>'s Page</h3>
 
-      <h5 class="secondHeader">Posts by <%=user.firstName%></h5>
+      <h3 class="pageHeader">Posts by <%=user.firstName%></h3>
       <ul>
         <% for (let i = 0; i < user.posts.length; i++) { %>
           <li><a href="/posts/<%=user.posts[i]._id%>"><%=user.posts[i].title%></a> <small>(<%=user.posts[i].feeling%>)</small></li>
