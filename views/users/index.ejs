@@ -7,13 +7,16 @@
     <title>All Users</title>
   </head>
   <body>
-    <h1>All Users</h1>
-
-    <ul>
+    <div class="centerText">
+      <h3 class="pageHeader">iFelt's Users</h3>
+      <p class="quote">"Feelings are just visitors.  Let them come and go."</p>
+      <p class="quoter">Mooji</p>
+      <ul>
         <% for (let i = 0; i < users.length ; i++) { %>
           <li><a href="/users/<%=users[i]._id%>"><%=users[i].firstName%></a></li>
         <% } %>
-    </ul>
+      </ul>
+    </div>
     <% include ../../partials/footer.ejs %>
   </body>
 </html>

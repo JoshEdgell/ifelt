@@ -7,18 +7,19 @@
     <title>User Login Page</title>
   </head>
   <body>
+    <div class="centerText">
+      <h3 class="pageHeader">User Login Page</h3>
+      <% if (passwordFail === true) { %>
+        <p>Username and password combination not found</p>
+      <% } %>
 
-    <h1>User Login Page</h1>
-    <% if (passwordFail === true) { %>
-      <p>Username and password combination not found</p>
-    <% } %>
-
-    <form action="/users/login" method="POST">
-      Username: <input type="text" name="username"><br/>
-      Password: <input type="password" name="password"><br/>
-      <input type="submit" value="Submit">
-    </form>
-    Don't have an account yet? <a href="/users/register">Create one now</a>
+      <form action="/users/login" method="POST" class="loginForm">
+        Username: <input type="text" name="username"><br/>
+        Password: <input type="password" name="password"><br/>
+        <input type="submit" value="Submit">
+      </form>
+      Don't have an iFelt account? <a href="/users/register">Create one now</a>
+    </div>
     <% include ../../partials/footer.ejs %>
   </body>
 </html>
