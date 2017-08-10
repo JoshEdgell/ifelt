@@ -3,11 +3,23 @@ const router      = express.Router();
 const Feeling     = require('../models/feelings.js');
 const Post        = require('../models/posts.js');
 const User        = require('../models/users.js');
+const Comment     = require('../models/comments.js');
 
 router.get('/',(req,res)=>{
   Post.find({}, (err,foundPosts)=>{
     res.render('posts/index.ejs',{
       posts: foundPosts
+    })
+  })
+})
+
+router.post('/comment/:id', (req,res)=>{
+  Post.findById(req.params.id, (err,foundPost)=>{
+    Comment.create(req.body, (err,createdComment)=>{
+      foundPost.comments.push(createdComment);
+      foundPost.save((err,data)=>{
+        res.redirect('/posts')
+      })
     })
   })
 })

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Comment = require('./comments.js');
 
 const postSchema = new mongoose.Schema({
   title: String,
@@ -6,7 +7,8 @@ const postSchema = new mongoose.Schema({
   authorLastName: String,
   authorUserName: String,
   feeling: String,
-  postBody: String
+  postBody: String,
+  comments: [Comment.schema]
 });
 
 module.exports = mongoose.model('Posts', postSchema);
