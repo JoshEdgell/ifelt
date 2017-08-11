@@ -13,15 +13,20 @@ router.get('/',(req,res)=>{
   })
 })
 
-router.post('/comment/:id', (req,res)=>{
-  Post.findById(req.params.id, (err,foundPost)=>{
-    Comment.create(req.body, (err,createdComment)=>{
-      foundPost.comments.push(createdComment);
-      foundPost.save((err,data)=>{
-        res.redirect('/posts')
+//Comment on a Post
+router.post('/comment/:id',(req,res)=>{
+  if (req.session.logged){
+    Post.findById(req.params.id, (err,foundPost)=>{
+      Comment.create(req.body, (err,createdComment)=>{
+        foundPost.comments.push(createdComment);
+        foundPost.save((err,data)=>{
+          res.redirect('/posts')
+        })
       })
     })
-  })
+  } else {
+    res.redirect('/users/login');
+  }
 })
 
 //Create New Post

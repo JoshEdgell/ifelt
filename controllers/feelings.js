@@ -13,7 +13,11 @@ router.get('/', (req, res)=>{
 
 //New Feeling
 router.get('/new', (req,res)=>{
-  res.render('feelings/new.ejs');
+  if (req.session.logged){
+    res.render('feelings/new.ejs');
+  } else {
+    res.redirect('/users/login');
+  }
 });
 router.post('/', (req,res)=>{
   console.log(req.body);
