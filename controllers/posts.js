@@ -31,6 +31,7 @@ router.post('/comment/:id',(req,res)=>{
 
 //Create New Post
 router.get('/new/:id', (req, res)=>{
+  if (req.session.logged){
   User.findById(req.params.id, (err,foundUser)=>{
     Feeling.find({}, (err,foundFeelings)=>{
       res.render('posts/new.ejs', {
@@ -39,6 +40,9 @@ router.get('/new/:id', (req, res)=>{
       })
     })
   })
+  } else {
+    res.redirect('/users/login');
+  }
 });
 router.post('/:id/:first/:last/:username',(req,res)=>{
   req.body.authorFirstName = req.params.first;
